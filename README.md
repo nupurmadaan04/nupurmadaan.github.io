@@ -35,4 +35,4 @@ If you want to contact me you can reach me at [Linkedin](https://www.linkedin.co
 
 ## License
 
-MIT
+[MIT](https://github.com/nupurmadaan04/nupurmadaan.github.io/blob/main/LICENSE)
