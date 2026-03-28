@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Nupur Madaan</title>
 
   <!--
     - favicon
@@ -138,7 +138,7 @@
           </li>
 
 <li class="social-item">
-  <a href="./assets/Nupur Resume Updated.pdf" target="_blank" class="social-link">
+  <a href="./assets/Nupur Madaan Resume.pdf" target="_blank" class="social-link">
     <ion-icon name="eye-outline"></ion-icon>
   </a>
 </li>
@@ -362,7 +362,7 @@ My goal is to leverage data science and technology to build solutions that make 
 
        <div style="margin: 15px 0; text-align: left;">
 
-  <a href="./assets/Nupur Resume Updated.pdf" download target="_blank"
+  <a href="./assets/Nupur Madaan Resume.pdf" download target="_blank"
      style="
         display: inline-flex;
         align-items: center;
