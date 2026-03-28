@@ -362,7 +362,7 @@ My goal is to leverage data science and technology to build solutions that make 
 
        <div style="margin: 15px 0; text-align: left;">
 
-  <a href="./assets/Nupur Madaan Resume.pdf" download target="_blank"
+  <a href="./assets/Nupur Madaan Resume.pdf" download="Nupur Madaan Resume.pdf" target="_blank"
      style="
         display: inline-flex;
         align-items: center;
