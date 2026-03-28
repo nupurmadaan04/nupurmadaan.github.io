@@ -30,8 +30,8 @@ git clone https://github.com/nupurmadaan04/nupurmadaan.github.io
 
 ## Contact
 
-If you want to contact me you can reach me at [Twitter](https://www.x.com/nupurmadaan04_).
-If you want to contact me you can reach me at [Linkedin](https://www.linkedin.com/in/nupurmadaan04_)
+If you want to contact me you can reach me at [Twitter](https://www.x.com/nupurmadaan04).
+If you want to contact me you can reach me at [Linkedin](https://www.linkedin.com/in/nupurmadaan04)
 
 ## License
 
