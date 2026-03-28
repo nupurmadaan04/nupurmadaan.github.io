@@ -2,7 +2,6 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/nupurmadaan04/nupurmadaan.github.io)
 ![GitHub stars](https://img.shields.io/github/stars/nupurmadaan04/nupurmadaan.github.io?style=social)
-![GitHub forks](https://img.shields.io/github/forksnupurmadaan04/nupurmadaan.github.io?style=social)
 
 This is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
 
