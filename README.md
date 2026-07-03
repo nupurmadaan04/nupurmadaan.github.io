@@ -1,44 +1,121 @@
-# vCard - Personal portfolio
+# 🌐 Nupur Madaan | Personal Portfolio
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+Welcome to my personal portfolio website! This portfolio showcases my projects, technical skills, internships, certifications, and experience in **Data Science, Artificial Intelligence, Machine Learning, and Python Development**.
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+## 🔗 Live Website
 
-## Demo
+**Portfolio:** https://nupurmadaan.xyz
 
-![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
+---
 
-## Prerequisites
+## 👩‍💻 About Me
 
-Before you begin, ensure you have met the following requirements:
+Hi, I'm **Nupur Madaan**, a B.Tech Computer Science student passionate about solving real-world problems using data, AI, and modern technologies.
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+My interests include:
 
-## Installing vCard
+- 📊 Data Science
+- 🤖 Artificial Intelligence
+- 🧠 Machine Learning
+- 🐍 Python Programming
+- 📈 Data Visualization
+- 🗄️ SQL & Database Management
 
-To install **vCard**, follow these steps:
+---
 
-Linux and macOS:
+## 🚀 Featured Projects
 
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+### 🤖 AI Applications
+- **Parklytix AI**
+- **Cogentic**
+- **AI Intelligence Retail System**
+
+### 📊 Data Science & Machine Learning
+- Soul Sense Exam
+- AI in Agriculture
+
+### 🐍 Python Applications
+- Airline Ticket Generator
+
+---
+
+## 💼 Experience
+
+- **AI Intern** | Jalte Diye Foundation (Cogentic)
+- **Data Visualization Intern** | Infosys Springboard
+- **AI & ML Intern** | Academor
+
+---
+
+## 🛠️ Tech Stack
+
+### Languages
+- Python
+- C++
+- SQL
+
+### Libraries & Tools
+- NumPy
+- Pandas
+- Matplotlib
+- Scikit-learn
+- Git & GitHub
+- VS Code
+- Jupyter Notebook
+- MySQL
+- Excel
+
+---
+
+## ✨ Features
+
+- Responsive Design
+- Modern Portfolio UI
+- Project Showcase
+- Internship Timeline
+- Skills Section
+- Resume Download
+- Contact Information
+- Social Media Links
+
+---
+
+## 📂 Folder Structure
+
+```
+Portfolio/
+│── assets/
+│   ├── css/
+│   ├── images/
+│   ├── js/
+│
+│── index.html
+│── README.md
 ```
 
-Windows:
+---
+
+## 🚀 Run Locally
+
+Clone the repository:
 
 ```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+git clone https://github.com/nupurmadaan04/nupurmadaan04.github.io.git
 ```
 
-## Contact
+Open the project folder and launch `index.html` using **Live Server** in Visual Studio Code.
 
-If you want to contact me you can reach me at [Twitter](https://www.x.com/codewithsadee_).
+---
 
-## License
+## 📬 Connect With Me
 
-MIT
+📧 **Email:** nupur.04.mn@gmail.com
+
+💼 **LinkedIn:** https://linkedin.com/in/nupurmadaan04
+
+💻 **GitHub:** https://github.com/nupurmadaan04
+
+🌐 **Portfolio:** https://nupurmadaan.xyz
+
+---
+
