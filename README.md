@@ -1,121 +1,93 @@
-# 🌐 Nupur Madaan | Personal Portfolio
+# NUPUR MADAAN — THE SERIES PORTFOLIO
 
-Welcome to my personal portfolio website! This portfolio showcases my projects, technical skills, internships, certifications, and experience in **Data Science, Artificial Intelligence, Machine Learning, and Python Development**.
+A cinematic, streaming-inspired personal portfolio for **Nupur Madaan**: Data Analyst, Data Scientist, and Machine Learning Enthusiast (B.Tech Computer Science and Engineering @ Mody University of Science and Technology, CGPA 8.93).
 
-## 🔗 Live Website
+- **Live URL:** [https://www.nupurmadaan.xyz](https://www.nupurmadaan.xyz)
+- **Deployment Repository:** [https://github.com/nupurmadaan04/nupurmadaan.github.io](https://github.com/nupurmadaan04/nupurmadaan.github.io)
+- **Primary Technical Focus:** Data Analytics, Machine Learning, Deep Learning, Python, SQL, Data Visualization, and Applied AI.
 
-**Portfolio:** https://nupurmadaan.xyz
-
----
-
-## 👩‍💻 About Me
-
-Hi, I'm **Nupur Madaan**, a B.Tech Computer Science student passionate about solving real-world problems using data, AI, and modern technologies.
-
-My interests include:
-
-- 📊 Data Science
-- 🤖 Artificial Intelligence
-- 🧠 Machine Learning
-- 🐍 Python Programming
-- 📈 Data Visualization
-- 🗄️ SQL & Database Management
+> A personal portfolio featuring a fictional streaming-platform look with a bespoke soft pastel blue and periwinkle design system. It is not affiliated with any streaming service and contains zero third-party branding.
 
 ---
 
-## 🚀 Featured Projects
+## Tech Stack & Architecture
 
-### 🤖 AI Applications
-- **Parklytix AI**
-- **Cogentic**
-- **AI Intelligence Retail System**
-
-### 📊 Data Science & Machine Learning
-- Soul Sense Exam
-- AI in Agriculture
-
-### 🐍 Python Applications
-- Airline Ticket Generator
+- **Framework:** React 18 + TypeScript + Vite 6
+- **Styling:** Tailwind CSS 4 with custom soft pastel blue design tokens (`#38bdf8`, `#818cf8`, `#090e17`)
+- **Animation & Motion:** Framer Motion 11 + Lenis smooth scrolling
+- **Imaging Pipeline:** Sharp (generating multi-resolution responsive WebP portraits + Open Graph image)
+- **Deployment:** GitHub Pages via GitHub Actions workflow (`deploy.yml`)
+- **Custom Domain:** `www.nupurmadaan.xyz` configured via `CNAME` in `public/` and root
 
 ---
 
-## 💼 Experience
+## Local Development
 
-- **AI Intern** | Jalte Diye Foundation (Cogentic)
-- **Data Visualization Intern** | Infosys Springboard
-- **AI & ML Intern** | Academor
-
----
-
-## 🛠️ Tech Stack
-
-### Languages
-- Python
-- C++
-- SQL
-
-### Libraries & Tools
-- NumPy
-- Pandas
-- Matplotlib
-- Scikit-learn
-- Git & GitHub
-- VS Code
-- Jupyter Notebook
-- MySQL
-- Excel
-
----
-
-## ✨ Features
-
-- Responsive Design
-- Modern Portfolio UI
-- Project Showcase
-- Internship Timeline
-- Skills Section
-- Resume Download
-- Contact Information
-- Social Media Links
-
----
-
-## 📂 Folder Structure
-
-```
-Portfolio/
-│── assets/
-│   ├── css/
-│   ├── images/
-│   ├── js/
-│
-│── index.html
-│── README.md
-```
-
----
-
-## 🚀 Run Locally
-
-Clone the repository:
+Requires **Node.js 18+**.
 
 ```bash
-git clone https://github.com/nupurmadaan04/nupurmadaan04.github.io.git
+# Install dependencies
+npm install
+
+# Start local development server
+npm run dev
 ```
 
-Open the project folder and launch `index.html` using **Live Server** in Visual Studio Code.
+Open the local URL (usually `http://localhost:5173`).
 
 ---
 
-## 📬 Connect With Me
+## Production Build & Preview
 
-📧 **Email:** nupur.04.mn@gmail.com
+```bash
+# Typecheck and build production bundle
+npm run build
 
-💼 **LinkedIn:** https://linkedin.com/in/nupurmadaan04
+# Preview production build locally
+npm run preview
+```
 
-💻 **GitHub:** https://github.com/nupurmadaan04
-
-🌐 **Portfolio:** https://nupurmadaan.xyz
+The output bundle is emitted into `dist/`. Vite automatically copies `public/CNAME` to `dist/CNAME` during build.
 
 ---
 
+## Updating Portfolio Content
+
+All personal information, projects, skills, education, and milestones are organized cleanly in **[`src/data/portfolio.ts`](src/data/portfolio.ts)**:
+
+| Item | Location in `src/data/portfolio.ts` |
+| --- | --- |
+| Name, headline, links, bio | `profile` |
+| Featured Originals (Projects) | `projects` (AI Crop Yield, Soul Sense, Cogentic, Dental Caries, Military Analytics) |
+| Skills & evidence links | `skillCategories`, `skillEvidence` |
+| Work Experience & Internships | `experience` (Infosys Springboard, Jalte Diye, YBI, Academor) |
+| Education | `education` (Mody University CSE, CGPA 8.93) |
+| Certifications | `certifications` (Oracle Cloud, Databricks, Cisco, Python, etc.) |
+| Top Picks & Highlight Reel | `topPicks`, `introSlides` |
+
+### Resume and Photography Assets
+- **Resume:** `public/assets/Nupur_Madaan_Resume.pdf`
+- **Portrait Photo:** `public/assets/nupur.jpg`
+- **Rebuilding Image Variants:** Run `npm run images` to regenerate `portrait-1100.webp`, `portrait-720.webp`, `portrait-420.webp`, and `og-image.jpg`.
+
+---
+
+## GitHub Pages Deployment
+
+The deployment repository is configured for `nupurmadaan04/nupurmadaan.github.io` on branch `main`.
+
+A GitHub Actions workflow is provided at `.github/workflows/deploy.yml` which automatically:
+1. Checks out the code.
+2. Installs Node.js dependencies with caching.
+3. Builds the production bundle (`npm run build`).
+4. Verifies the `CNAME` file exists with `www.nupurmadaan.xyz`.
+5. Deploys the `dist/` directory to GitHub Pages.
+
+---
+
+## Accessibility & Responsiveness
+
+- Respects `prefers-reduced-motion` settings across all devices.
+- Keyboard accessible navigation with `Esc`, `Tab`, `Space`, and arrow keys.
+- Fully responsive across desktop, tablet, and mobile viewports with native touch swipe rails.
+- High-contrast, accessible typography on dark slate backgrounds.
