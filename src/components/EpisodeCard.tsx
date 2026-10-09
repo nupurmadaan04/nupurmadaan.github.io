@@ -7,13 +7,13 @@ export default function EpisodeCard({ episode, index }: { episode: Episode; inde
   const [season, ep] = episode.code.split(' ');
   return (
     <motion.article
-      className="w-[80vw] shrink-0 snap-start sm:w-[52vw] md:w-[38vw] lg:w-[30vw] xl:w-[26vw]"
+      className="w-[82vw] shrink-0 snap-start sm:w-[54vw] md:w-[40vw] lg:w-[32vw] xl:w-[28vw]"
       initial={{ opacity: 0, y: 30, rotateY: -8 }}
       animate={{ opacity: 1, y: 0, rotateY: 0 }}
-      transition={{ duration: 0.7, delay: index * 0.1, ease: EASE }}
+      transition={{ duration: 0.7, delay: Math.min(index, 6) * 0.08, ease: EASE }}
     >
       <Tilt max={7} className="group h-full rounded-xl">
-        <div className="flex h-full flex-col overflow-hidden rounded-xl bg-ink-2 ring-1 ring-white/10 transition duration-500 group-hover:ring-crimson-2/60">
+        <div className="flex h-full flex-col overflow-hidden rounded-xl bg-ink-2 ring-1 ring-white/10 transition duration-500 group-hover:ring-sky-400/60">
           <div className="relative aspect-video overflow-hidden">
             <div className="absolute inset-0 transition-transform duration-[1.2s] ease-[var(--ease-cine)] group-hover:scale-110">
               <PosterBackdrop palette={episode.palette}>
@@ -21,10 +21,10 @@ export default function EpisodeCard({ episode, index }: { episode: Episode; inde
               </PosterBackdrop>
             </div>
             <div className="absolute left-4 top-4 flex items-center gap-2">
-              <span className="rounded bg-black/50 px-2 py-0.5 text-[10px] font-bold tracking-[0.2em] text-bone backdrop-blur">{season}</span>
+              <span className="rounded bg-black/60 px-2 py-0.5 text-[10px] font-bold tracking-[0.2em] text-bone backdrop-blur">{season}</span>
               <span className="text-[10px] font-bold tracking-[0.2em] text-bone/80">EPISODE {ep.replace('E', '')}</span>
             </div>
-            <h4 className="absolute bottom-4 left-4 right-4 font-display text-3xl leading-none tracking-wide text-bone [transform:translateZ(30px)] sm:text-4xl">{episode.title}</h4>
+            <h4 className="absolute bottom-4 left-4 right-4 font-display text-2xl leading-tight tracking-wide text-bone [transform:translateZ(30px)] sm:text-3xl">{episode.title}</h4>
           </div>
           <div className="flex flex-1 flex-col p-4">
             <div className="mb-2 flex items-center justify-between text-[11px] text-smoke">

@@ -367,32 +367,32 @@ export type Achievement = {
 
 export const achievements: Achievement[] = [
   {
+    id: 'gssoc-rank',
+    title: 'Top 20 Project Admin',
+    org: 'GirlScript Summer of Code (GSSoC)',
+    detail: 'Recognized as Top 20 Project Admin in GirlScript Summer of Code.',
+    laurel: 'Open Source Leadership',
+  },
+  {
+    id: 'elite-winter-rank',
+    title: '4th Rank Project Admin',
+    org: 'Elite Code Winters of Code',
+    detail: 'Secured 4th Rank Project Admin in Elite Code Winters of Code.',
+    laurel: 'Open Source Leadership',
+  },
+  {
+    id: 'ssoc-rank',
+    title: 'Top 50 Contributor',
+    org: 'SSOC',
+    detail: 'Achieved Top 50 Contributor ranking in the SSOC open source program.',
+    laurel: 'Open Source Achievement',
+  },
+  {
     id: 'btech-cgpa',
     title: 'CGPA 8.93 in B.Tech CSE',
     org: 'Mody University of Science and Technology',
     detail: 'Consistent academic excellence in Computer Science and Engineering coursework (2023–2027).',
     laurel: 'Academic Excellence',
-  },
-  {
-    id: 'infosys-intern',
-    title: 'Data Visualization Intern',
-    org: 'Infosys Springboard',
-    detail: 'Engineered the Unified Military Analytics Dashboard for multi-country defense data comparison (July 2026–Present).',
-    laurel: 'Internship',
-  },
-  {
-    id: 'jalte-diye-intern',
-    title: 'AI & Automation Intern',
-    org: 'Jalte Diye Foundation',
-    detail: 'Engineered Cogentic AI automated publishing pipeline and quality gate (June–July 2026).',
-    laurel: 'Internship',
-  },
-  {
-    id: 'ybi-intern',
-    title: 'Data Science Intern',
-    org: 'YBI Foundation',
-    detail: 'Built agricultural yield estimation models and exploratory analysis on real-world datasets (May–June 2025).',
-    laurel: 'Internship',
   },
   {
     id: 'secondary-education',
@@ -403,40 +403,84 @@ export const achievements: Achievement[] = [
   },
 ];
 
-export type Certification = { issuer: string; name: string; link: string };
+export type CredentialItem = {
+  issuer: string;
+  name: string;
+  category: 'Virtual Experience' | 'Applied Skills' | 'Certificate' | 'Verified Badges' | 'Practical Training';
+  link: string;
+  actionText: string;
+  isFormalCertification?: boolean;
+  description?: string;
+};
 
-export const certifications: Certification[] = [
+export const credentials: CredentialItem[] = [
   {
     issuer: 'Deloitte Australia',
     name: 'Data Analytics Virtual Experience Program',
-    link: 'https://www.theforage.com/simulations/deloitte-au/data-analytics-m79r',
+    category: 'Virtual Experience',
+    link: 'https://www.theforage.com/simulations/deloitte-au/data-analytics-s5zy/completed',
+    actionText: 'View Completion',
+    isFormalCertification: false,
+    description: 'Virtual experience program covering data analytics simulation, exploratory data analysis, and insights communication.',
   },
   {
     issuer: 'Microsoft',
-    name: 'Applied Skills: Generate Reports with AI Research Agents',
-    link: 'https://learn.microsoft.com/en-us/credentials/applied-skills/generate-reports-with-ai-research-agents/',
+    name: 'Microsoft Applied Skills: Generate Reports with AI Research Agents',
+    category: 'Applied Skills',
+    link: 'https://learn.microsoft.com/api/credentials/share/en-us/NupurMadaan-4599/74D05CDEC5B306EE?sharingId=F468A78DF862A3F7',
+    actionText: 'Verify Credential',
+    isFormalCertification: true,
+    description: 'Verified Microsoft credential demonstrating applied competence in building AI research agents and automated report synthesis.',
+  },
+  {
+    issuer: 'Jalte Diye Foundation',
+    name: 'WiSTEM Certificate',
+    category: 'Certificate',
+    link: 'https://www.jaltediyefoundation.org/certificate.html?id=JDF-WiSTEM-CE11',
+    actionText: 'Verify Certificate',
+    isFormalCertification: false,
+    description: 'Official WiSTEM certificate issued by Jalte Diye Foundation (Credential Verification ID: JDF-WiSTEM-CE11).',
   },
   {
     issuer: 'Credly',
     name: 'Verified Badges & Technical Credentials',
+    category: 'Verified Badges',
     link: 'https://www.credly.com/users/nupurmadaan04',
+    actionText: 'View Badges',
+    isFormalCertification: true,
+    description: 'Verified technical badges and credentials across cloud systems, database technologies, and software development.',
   },
   {
     issuer: 'Infosys Springboard',
     name: 'Data Visualization & Dashboard Engineering',
+    category: 'Practical Training',
     link: 'https://github.com/nupurmadaan04/Unified-Military-Analytics',
+    actionText: 'View Project',
+    isFormalCertification: false,
+    description: 'Practical data visualization internship experience engineering interactive multi-country defense intelligence dashboards.',
   },
   {
     issuer: 'YBI Foundation',
     name: 'Data Science & Machine Learning Practical Training',
+    category: 'Practical Training',
     link: 'https://github.com/nupurmadaan04/AI-agriculture-yield-production',
+    actionText: 'View Project',
+    isFormalCertification: false,
+    description: 'Practical training and internship in predictive modeling, feature engineering, and agricultural crop yield estimation.',
   },
   {
     issuer: 'Academor',
     name: 'AI-ML Practical Foundation Modules',
+    category: 'Practical Training',
     link: 'https://github.com/nupurmadaan04',
+    actionText: 'View Profile',
+    isFormalCertification: false,
+    description: 'Practical foundational training covering supervised and unsupervised learning algorithms implemented in Python.',
   },
 ];
+
+export type Certification = CredentialItem;
+export const certifications: CredentialItem[] = credentials;
 
 export type Skill = { name: string; mono: string; note?: string };
 export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[] };
@@ -578,78 +622,126 @@ export const seasons: Season[] = [
   {
     number: 1,
     title: 'Academic Roots',
-    period: '2020 – 2023',
-    synopsis: 'Secondary and Intermediate education at S D Model Sr Sec School with distinction.',
+    period: '2023 – Present',
+    synopsis: 'B.Tech in Computer Science & Engineering at Mody University, student leadership, volunteering, and verified competitive-program achievements.',
     episodes: [
       {
         code: 'S01 E01',
-        title: 'Secondary Merit',
-        description: 'Completed Secondary Education with 90.8%, establishing quantitative and analytical excellence.',
-        tags: ['Secondary', '90.8%', 'Merit'],
-        runtime: '2020 – 2021',
-        palette: cyanPastel,
-      },
-      {
-        code: 'S01 E02',
-        title: 'Non-Medical Foundation',
-        description: 'Completed Intermediate Non-Medical with 84.4%, building mathematical foundations.',
-        tags: ['Intermediate', '84.4%', 'Mathematics'],
-        runtime: '2022 – 2023',
-        palette: periwinkle,
-      },
-    ],
-  },
-  {
-    number: 2,
-    title: 'Computer Science & AI',
-    period: '2023 – 2025',
-    synopsis: 'B.Tech in Computer Science and Engineering at Mody University, graduating in 2027.',
-    episodes: [
-      {
-        code: 'S02 E01',
-        title: 'The CS Engineer',
-        description: 'Pursuing B.Tech Computer Science and Engineering at Mody University of Science and Technology — CGPA 8.93.',
+        title: 'B.Tech Computer Science & Engineering',
+        description: 'Pursuing Bachelor of Technology in Computer Science and Engineering at Mody University of Science and Technology (2023–2027) with an academic record of CGPA 8.93.',
         tags: ['B.Tech CSE', 'Mody University', 'CGPA 8.93'],
         runtime: '2023 – 2027',
         palette: skyPastel,
       },
       {
-        code: 'S02 E02',
-        title: 'AI-ML Apprenticeship',
-        description: 'Completed hands-on AI & ML modules and Python implementations during Academor internship.',
-        tags: ['Academor', 'Python', 'NumPy', 'Pandas'],
-        runtime: 'Jun 2024 – Jul 2024',
+        code: 'S01 E02',
+        title: 'Jalte Diye Foundation',
+        description: 'Served as Volunteer (August 2025 – December 2025) and Event & Outreach Lead (January 2026 – Present). Hosted and coordinated events and campaigns, managed event promotions and outreach, and supported communication and participation initiatives.',
+        tags: ['Volunteer', 'Event & Outreach Lead', 'Outreach'],
+        runtime: 'Aug 2025 – Present',
+        palette: cyanPastel,
+      },
+      {
+        code: 'S01 E03',
+        title: "Institution's Innovation Council (IIC)",
+        description: "Event & Promotion Coordinator (November 2025 – Present). Coordinated and managed events, supporting comprehensive event planning, promotion, and execution.",
+        tags: ['IIC', 'Event Coordinator', 'Promotions'],
+        runtime: 'Nov 2025 – Present',
+        palette: periwinkle,
+      },
+      {
+        code: 'S01 E04',
+        title: 'Elite Coders',
+        description: 'Tech Team Member (August 2026 – Present). Active technical team involvement supporting programming initiatives and developer community sessions.',
+        tags: ['Elite Coders', 'Tech Team', 'Technical Involvement'],
+        runtime: 'Aug 2026 – Present',
         palette: bluePastel,
       },
       {
-        code: 'S02 E03',
-        title: 'Agricultural Data Science',
-        description: 'Preprocessed real-world agricultural data and evaluated yield estimation models at YBI Foundation.',
-        tags: ['YBI Foundation', 'Data Science', 'Preprocessing'],
-        runtime: 'May 2025 – Jun 2025',
+        code: 'S01 E05',
+        title: 'SSOC',
+        description: 'Achieved Top 50 Contributor ranking in the SSOC open source program.',
+        tags: ['SSOC', 'Top 50 Contributor', 'Open Source'],
+        runtime: 'Contributor',
         palette: violetPastel,
+      },
+      {
+        code: 'S01 E06',
+        title: 'GirlScript Summer of Code (GSSoC)',
+        description: 'Recognized as Top 20 Project Admin in GirlScript Summer of Code (GSSoC).',
+        tags: ['GSSoC', 'Top 20 Project Admin', 'Open Source'],
+        runtime: 'Project Admin',
+        palette: cyanPastel,
+      },
+      {
+        code: 'S01 E07',
+        title: 'Elite Code Winters of Code',
+        description: 'Secured 4th Rank Project Admin in Elite Code Winters of Code.',
+        tags: ['Winters of Code', '4th Rank', 'Project Admin'],
+        runtime: 'Project Admin',
+        palette: skyPastel,
+      },
+    ],
+  },
+  {
+    number: 2,
+    title: 'Foundational Studies & Training',
+    period: '2020 – 2024',
+    synopsis: 'Secondary and Intermediate education with academic distinction and AI-ML foundational apprenticeship.',
+    episodes: [
+      {
+        code: 'S02 E01',
+        title: 'Secondary Education Merit',
+        description: 'Completed Secondary Education at S D Model Sr Sec School with 90.8%, building strong analytical and mathematical roots.',
+        tags: ['S D Model School', '90.8%', 'Secondary Merit'],
+        runtime: '2020 – 2021',
+        palette: cyanPastel,
+      },
+      {
+        code: 'S02 E02',
+        title: 'Intermediate Non-Medical',
+        description: 'Completed Intermediate Education (Non-Medical stream) with 84.4%, solidifying mathematical and computational foundations.',
+        tags: ['S D Model School', '84.4%', 'Non-Medical'],
+        runtime: '2022 – 2023',
+        palette: periwinkle,
+      },
+      {
+        code: 'S02 E03',
+        title: 'AI-ML Practical Apprenticeship',
+        description: 'AI-ML Intern at Academor. Completed practical AI modules covering supervised learning, unsupervised learning, and Python algorithmic exercises with NumPy and Pandas.',
+        tags: ['Academor', 'AI-ML Intern', 'Python', 'NumPy'],
+        runtime: 'Jun 2024 – Jul 2024',
+        palette: bluePastel,
       },
     ],
   },
   {
     number: 3,
     title: 'Building Production AI',
-    period: '2026',
-    synopsis: 'Industry internships at Jalte Diye Foundation and Infosys Springboard.',
+    period: '2025 – Present',
+    synopsis: 'Verified industry internships across machine learning, agentic pipelines, and defense intelligence.',
     episodes: [
       {
         code: 'S03 E01',
-        title: 'The Cogentic Pipeline',
-        description: 'Summer Intern at Jalte Diye Foundation — built Cogentic AI content generator, evaluation gate, and automated CI/CD pipeline.',
-        tags: ['Cogentic', 'Gemini AI', 'GitHub Actions', 'PIL'],
+        title: 'YBI Foundation',
+        description: 'Data Science Intern — Preprocessed real agricultural data (1,500+ records) applying exploratory data analysis, feature scaling, encoding, and missing-value imputation. Trained and evaluated regression models for district crop yield estimation.',
+        tags: ['YBI Foundation', 'Data Science & ML', 'Crop Yield ML', 'Pandas'],
+        runtime: 'May 2025 – Jun 2025',
+        palette: violetPastel,
+      },
+      {
+        code: 'S03 E02',
+        title: 'Jalte Diye Foundation',
+        description: 'Summer Intern — Contributed to Cogentic, an automated content publishing engine and agentic AI platform. Engineered automated content generation pipelines with Gemini API, multi-criteria AI quality evaluation, PIL poster rendering, and GitHub Actions CI/CD.',
+        tags: ['Jalte Diye Foundation', 'Summer Intern', 'Cogentic AI', 'Gemini API'],
         runtime: 'Jun 2026 – Jul 2026',
         palette: cyanPastel,
       },
       {
-        code: 'S03 E02',
-        title: 'Visualizing Defense Intelligence',
-        description: 'Data Visualization Intern at Infosys Springboard — developing the Unified Military Analytics Dashboard.',
-        tags: ['Infosys', 'Data Visualization', 'Plotly', 'Streamlit'],
+        code: 'S03 E03',
+        title: 'Infosys Springboard',
+        description: 'Data Visualization Intern — Developing the Unified Military Analytics and Comparison Dashboard to analyze and benchmark international defense capability datasets using dynamic Plotly & Streamlit interactive visualizations.',
+        tags: ['Infosys Springboard', 'Data Visualization Intern', 'Plotly', 'Streamlit'],
         runtime: 'Jul 2026 – Present',
         palette: bluePastel,
       },
@@ -659,7 +751,7 @@ export const seasons: Season[] = [
     number: 4,
     title: 'Advanced Research & Deep Tech',
     period: '2026',
-    synopsis: 'Medical imaging deep learning and empirical forecasting platforms.',
+    synopsis: 'Medical imaging deep learning research, temporal walk-forward forecasting, and psychometrics.',
     episodes: [
       {
         code: 'S04 E01',
@@ -701,7 +793,6 @@ export const topPicks: TopPick[] = [
   { label: 'Interactive Viz', title: 'Plotly & Dashboards', detail: 'Multi-country benchmark matrices and comparative visual intelligence', palette: skyPastel },
   { label: 'Algorithms & CS', title: 'C++ Foundations', detail: 'Data structures, algorithm complexity, and high-performance computing', palette: bluePastel },
   { label: 'API Serving', title: 'FastAPI Microservices', detail: 'High-throughput async REST endpoints for machine learning inference', palette: periwinkle },
-  { label: 'Academic Merit', title: 'CGPA 8.93', detail: 'B.Tech in Computer Science & Engineering @ Mody University', palette: violetPastel },
 ];
 
 /** Slides for the "▶ Play Intro" cinematic sequence. */
@@ -752,7 +843,7 @@ export const introSlides: IntroSlide[] = [
 ];
 
 export type ProfileId = 'nupur' | 'recruiter' | 'data_lead' | 'analyst';
-export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
+export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'story';
 
 export const viewerProfiles: {
   id: ProfileId;
@@ -766,28 +857,28 @@ export const viewerProfiles: {
     name: 'Nupur',
     blurb: 'The complete portfolio, in cinematic order',
     color: '#38bdf8',
-    order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'],
+    order: ['about', 'journey', 'originals', 'picks', 'skills', 'story'],
   },
   {
     id: 'recruiter',
     name: 'Recruiter',
-    blurb: 'Resume, education, achievements & skills first',
+    blurb: 'Resume, education, credentials & skills first',
     color: '#818cf8',
-    order: ['story', 'moments', 'skills', 'originals', 'about', 'journey', 'picks'],
+    order: ['story', 'skills', 'originals', 'about', 'journey', 'picks'],
   },
   {
     id: 'data_lead',
     name: 'Data & AI Lead',
     blurb: 'Machine learning, research & architectures first',
     color: '#67e8f9',
-    order: ['originals', 'skills', 'journey', 'moments', 'about', 'picks', 'story'],
+    order: ['originals', 'skills', 'journey', 'about', 'picks', 'story'],
   },
   {
     id: 'analyst',
     name: 'Product & Analytics',
     blurb: 'Visualizations, dashboards & highlights first',
     color: '#a5b4fc',
-    order: ['picks', 'originals', 'skills', 'journey', 'about', 'moments', 'story'],
+    order: ['picks', 'originals', 'skills', 'journey', 'about', 'story'],
   },
 ];
 
@@ -795,8 +886,7 @@ export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: s
   about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Background & education', palette: periwinkle },
   journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: skyPastel },
   originals: { nav: 'Originals', card: 'Featured Projects', meta: `${projects.length} Verified Originals • 2026`, palette: cyanPastel },
-  picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 from resume & projects', palette: bluePastel },
+  picks: { nav: 'Focus Areas', card: 'Top Focus Areas', meta: 'Core competencies & technical focus', palette: bluePastel },
   skills: { nav: 'Skills', card: 'My Skill Universe', meta: `${skillCategories.length} Categories`, palette: skyPastel },
-  moments: { nav: 'Moments', card: 'Achievements', meta: `${achievements.length} Verified Moments & Credentials`, palette: periwinkle },
-  story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume • View & download', palette: violetPastel },
+  story: { nav: 'The Full Story', card: 'The Full Story', meta: 'Resume & Verified Credentials', palette: violetPastel },
 };

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { achievements, certifications, education, experience, profile, projects, skillCategories } from '../data/portfolio';
+import { achievements, credentials, education, experience, profile, projects, skillCategories } from '../data/portfolio';
 import { EASE, Magnetic, SectionHeading } from './fx';
 
-/** THE FULL STORY — a designed resume preview plus view / download actions. */
+/** THE FULL STORY — designed resume preview, download actions, and verified credentials showcase. */
 export default function ResumeSection({ onView }: { onView: () => void }) {
   return (
     <>
@@ -22,7 +22,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="font-serif text-3xl italic leading-tight text-bone">Every episode, on one page.</p>
           <p className="mt-3 text-sm leading-relaxed text-mist">
-            Education, training, projects, achievements and {certifications.length} certifications — view it here or take a copy with you.
+            Education, internships, projects, and {credentials.length} verified technical credentials & training programs — view here or download a copy.
           </p>
           <div className="mt-6 flex flex-col gap-3">
             <Magnetic className="w-full">
@@ -58,6 +58,61 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
               </div>
             ))}
           </dl>
+        </div>
+      </div>
+
+      {/* Verified Credentials, Virtual Experiences & Training Showcase */}
+      <div className="gutter mt-16 pt-8 border-t border-white/10">
+        <div className="mb-8 flex flex-wrap items-baseline justify-between gap-3">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-sky-400">Verified Credentials & Experience</p>
+            <h3 className="mt-1 font-display text-3xl tracking-wide text-bone sm:text-4xl">Certifications & Practical Training</h3>
+          </div>
+          <p className="max-w-md text-xs text-mist">
+            Official applied skills credentials, virtual experience completions, program certificates, and practical engineering milestones with verified links.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {credentials.map((c, i) => (
+            <motion.div
+              key={c.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-5% 0px' }}
+              transition={{ duration: 0.6, delay: i * 0.06, ease: EASE }}
+              className="group flex flex-col justify-between rounded-xl bg-ink-2 p-5 ring-1 ring-white/10 transition duration-300 hover:ring-sky-400/40 hover:-translate-y-1"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400">{c.issuer}</span>
+                  <span className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[10px] font-semibold text-mist">
+                    {c.category}
+                  </span>
+                </div>
+                <h4 className="mt-3 text-base font-semibold leading-snug text-bone group-hover:text-sky-200 transition">
+                  {c.name}
+                </h4>
+                {c.description && <p className="mt-2 text-xs leading-relaxed text-bone/70">{c.description}</p>}
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between">
+                <a
+                  href={c.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="link"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-300 hover:text-white transition group-hover:underline underline-offset-4"
+                >
+                  <span>{c.actionText}</span>
+                  <span className="text-[11px]">↗</span>
+                </a>
+                <span className="text-[10px] text-smoke">
+                  {c.isFormalCertification ? 'Verified Credential' : 'Verified Program'}
+                </span>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </>
@@ -127,7 +182,7 @@ export function ResumeSheet() {
             </div>
           ))}
 
-          <H>Work Experience</H>
+          <H>Work Experience & Internships</H>
           {experience.map((x) => (
             <div key={x.company} className="mb-5">
               <div className="flex flex-wrap justify-between gap-x-3">
@@ -170,7 +225,7 @@ export function ResumeSheet() {
             ))}
           </div>
 
-          <H>Achievements</H>
+          <H>Achievements & Open Source</H>
           <ul className="space-y-2">
             {achievements.map((a) => (
               <li key={a.id} className="text-xs leading-relaxed text-mist">
@@ -182,12 +237,25 @@ export function ResumeSheet() {
             ))}
           </ul>
 
-          <H>Certifications</H>
-          <p className="text-xs leading-relaxed text-mist">
-            {Array.from(new Set(certifications.map((c) => c.issuer)))
-              .map((iss) => `${iss}: ${certifications.filter((c) => c.issuer === iss).map((c) => c.name).join(', ')}`)
-              .join(' · ')}
-          </p>
+          <H>Credentials & Practical Training</H>
+          <ul className="space-y-2.5">
+            {credentials.map((c) => (
+              <li key={c.name} className="text-xs leading-snug">
+                <div className="flex flex-wrap items-baseline justify-between gap-1">
+                  <span className="font-semibold text-bone">{c.issuer}: </span>
+                  <a
+                    href={c.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[11px] text-sky-300 hover:text-white underline decoration-sky-400/40 hover:decoration-sky-300 underline-offset-2"
+                  >
+                    {c.actionText} ↗
+                  </a>
+                </div>
+                <p className="text-mist text-[11px]">{c.name}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </article>

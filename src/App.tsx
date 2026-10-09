@@ -14,7 +14,6 @@ import Seasons from './components/Seasons';
 import Originals from './components/Originals';
 import TopPicks from './components/TopPicks';
 import Skills from './components/Skills';
-import Achievements from './components/Achievements';
 import ResumeSection from './components/ResumeViewer';
 import FinalCTA from './components/FinalCTA';
 import { EASE } from './components/fx';
@@ -99,7 +98,6 @@ function Series() {
     originals: <Originals onOpen={setProject} />,
     picks: <TopPicks />,
     skills: <Skills />,
-    moments: <Achievements />,
     story: <ResumeSection onView={() => setResumeOpen(true)} />,
   };
 
