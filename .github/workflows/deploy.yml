@@ -40,13 +40,6 @@ jobs:
             echo "www.nupurmadaan.xyz" > dist/CNAME
           fi
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: www.nupurmadaan.xyz
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
