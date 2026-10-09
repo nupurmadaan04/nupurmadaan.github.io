@@ -14,18 +14,25 @@ const hi = sharp(src);
 const meta = await hi.metadata();
 console.log(`Source photo: ${meta.width}x${meta.height}, format: ${meta.format}`);
 
+// Centered crop calculation:
+// Source is 1600x1600 with head centerline around x=865
+// Crop a 1470x1470 square from left: 130, top: 0 to perfectly center her face
+const centeredCrop = { left: 130, top: 0, width: 1470, height: 1470 };
+
 // Generate portrait webp sizes
 for (const w of [1100, 720, 420]) {
   await sharp(src)
-    .resize({ width: w })
-    .webp({ quality: 90 })
+    .extract(centeredCrop)
+    .resize({ width: w, height: w })
+    .webp({ quality: 92 })
     .toFile(`${OUT}/portrait-${w}.webp`);
-  console.log(`Generated portrait-${w}.webp`);
+  console.log(`Generated centered portrait-${w}.webp`);
 }
 
 // Generate social share image (1200x630) with soft blue pastel theme
 const portraitThumb = await sharp(src)
-  .resize({ width: 520, height: 520, fit: 'cover', position: 'top' })
+  .extract(centeredCrop)
+  .resize({ width: 520, height: 520, fit: 'cover' })
   .png()
   .toBuffer();
 
